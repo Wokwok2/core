@@ -1,17 +1,16 @@
 package hello.core.beandefinitioin;
 
-import hello.core.discount.AppConfig;
+import hello.core.AppConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class BeanDefinitionTest {
 
-    AnnotationConfigApplicationContext ac =  new AnnotationConfigApplicationContext(AppConfig .class);
-//    GenericXmlApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+    //    GenericXmlApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");
     @Test
     @DisplayName("빈 설정 메타 정보 확인")
     void findApplicationBean() {
@@ -21,8 +20,9 @@ public class BeanDefinitionTest {
 
             if (beanDefinition.getRole() == BeanDefinition.ROLE_APPLICATION) {
                 System.out.println("beanDefinitionName = " + beanDefinitionName +
-                        " beanDefinition = " + beanDefinition);
+                        ", beanDefinition = " + beanDefinition);
             }
         }
     }
+
 }
