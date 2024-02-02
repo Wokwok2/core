@@ -14,7 +14,6 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy;
 
     public  OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("memberRepository1 = " + memberRepository);
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
