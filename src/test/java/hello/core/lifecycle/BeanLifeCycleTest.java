@@ -14,7 +14,6 @@ public class BeanLifeCycleTest {
         ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
         NetworkClient client = ac.getBean(NetworkClient.class);
         ac.close();
-
     }
 
     @Configuration
@@ -25,7 +24,5 @@ public class BeanLifeCycleTest {
             networkClient.setUrl("http://hello-spring.dev");
             return networkClient;
         }
-
-
     }
 }
